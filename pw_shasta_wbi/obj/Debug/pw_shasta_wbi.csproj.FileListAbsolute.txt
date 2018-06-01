@@ -1,0 +1,13 @@
+/home/wers4/Projects/pw_shasta_wbi/pw_shasta_wbi/bin/Debug/chromedriver.exe
+/home/wers4/Projects/pw_shasta_wbi/pw_shasta_wbi/bin/Debug/pw_shasta_wbi.dll
+/home/wers4/Projects/pw_shasta_wbi/pw_shasta_wbi/bin/Debug/pw_shasta_wbi.pdb
+/home/wers4/Projects/pw_shasta_wbi/pw_shasta_wbi/bin/Debug/nunit.framework.dll
+/home/wers4/Projects/pw_shasta_wbi/pw_shasta_wbi/bin/Debug/WebDriver.dll
+/home/wers4/Projects/pw_shasta_wbi/pw_shasta_wbi/bin/Debug/WebDriver.Support.dll
+/home/wers4/Projects/pw_shasta_wbi/pw_shasta_wbi/bin/Debug/nunit.framework.xml
+/home/wers4/Projects/pw_shasta_wbi/pw_shasta_wbi/bin/Debug/WebDriver.xml
+/home/wers4/Projects/pw_shasta_wbi/pw_shasta_wbi/bin/Debug/WebDriver.Support.xml
+/home/wers4/Projects/pw_shasta_wbi/pw_shasta_wbi/obj/Debug/pw_shasta_wbi.csprojResolveAssemblyReference.cache
+/home/wers4/Projects/pw_shasta_wbi/pw_shasta_wbi/obj/Debug/pw_shasta_wbi.csproj.CoreCompileInputs.cache
+/home/wers4/Projects/pw_shasta_wbi/pw_shasta_wbi/obj/Debug/pw_shasta_wbi.dll
+/home/wers4/Projects/pw_shasta_wbi/pw_shasta_wbi/obj/Debug/pw_shasta_wbi.pdb
