@@ -3314,18 +3314,6 @@
             <param name="expression">A Constraint to be applied</param>
             <param name="getExceptionMessage">A function to build the message included with the Exception</param>
         </member>
-        <member name="T:NUnit.Framework.ApartmentAttribute">
-            <summary>
-            Marks a test that must run in a particular threading apartment state, causing it
-            to run in a separate thread if necessary.
-            </summary>
-        </member>
-        <member name="M:NUnit.Framework.ApartmentAttribute.#ctor(System.Threading.ApartmentState)">
-            <summary>
-            Construct an ApartmentAttribute
-            </summary>
-            <param name="apartmentState">The apartment state that this test must be run under. You must pass in a valid apartment state.</param>
-        </member>
         <member name="T:NUnit.Framework.AuthorAttribute">
             <summary>
             Provides the Author of a test or test fixture. 
@@ -3829,30 +3817,6 @@
             the same level. Valid on classes and methods but not assemblies.
             </summary>
         </member>
-        <member name="T:NUnit.Framework.PlatformAttribute">
-            <summary>
-            PlatformAttribute is used to mark a test fixture or an
-            individual method as applying to a particular platform only.
-            </summary>
-        </member>
-        <member name="M:NUnit.Framework.PlatformAttribute.#ctor">
-            <summary>
-            Constructor with no platforms specified, for use
-            with named property syntax.
-            </summary>
-        </member>
-        <member name="M:NUnit.Framework.PlatformAttribute.#ctor(System.String)">
-            <summary>
-            Constructor taking one or more platforms
-            </summary>
-            <param name="platforms">Comma-delimited list of platforms</param>
-        </member>
-        <member name="M:NUnit.Framework.PlatformAttribute.ApplyToTest(NUnit.Framework.Internal.Test)">
-            <summary>
-            Causes a test to be skipped if this PlatformAttribute is not satisfied.
-            </summary>
-            <param name="test">The test to modify</param>
-        </member>
         <member name="T:NUnit.Framework.PropertyAttribute">
             <summary>
             PropertyAttribute is used to attach information to a test as a name/value pair..
@@ -4112,11 +4076,6 @@
         <member name="M:NUnit.Framework.RequiresThreadAttribute.#ctor">
             <summary>
             Construct a RequiresThreadAttribute
-            </summary>
-        </member>
-        <member name="M:NUnit.Framework.RequiresThreadAttribute.#ctor(System.Threading.ApartmentState)">
-            <summary>
-            Construct a RequiresThreadAttribute, specifying the apartment
             </summary>
         </member>
         <member name="T:NUnit.Framework.RetryAttribute">
@@ -4437,16 +4396,6 @@
             non-empty value, the test is marked as ignored.
             </summary>
             <value>The ignore reason.</value>
-        </member>
-        <member name="P:NUnit.Framework.TestCaseAttribute.IncludePlatform">
-            <summary>
-            Comma-delimited list of platforms to run the test for
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.TestCaseAttribute.ExcludePlatform">
-            <summary>
-            Comma-delimited list of platforms to not run the test for
-            </summary>
         </member>
         <member name="P:NUnit.Framework.TestCaseAttribute.Category">
             <summary>
@@ -4775,20 +4724,6 @@
             <summary>
             Construct the attribute, specifying a combining strategy and source of parameter data.
             </summary>
-        </member>
-        <member name="T:NUnit.Framework.TimeoutAttribute">
-            <summary>
-            Used on a method, marks the test with a timeout value in milliseconds. 
-            The test will be run in a separate thread and is cancelled if the timeout 
-            is exceeded. Used on a class or assembly, sets the default timeout 
-            for all contained test methods.
-            </summary>
-        </member>
-        <member name="M:NUnit.Framework.TimeoutAttribute.#ctor(System.Int32)">
-            <summary>
-            Construct a TimeoutAttribute given a time in milliseconds
-            </summary>
-            <param name="timeout">The timeout value in milliseconds</param>
         </member>
         <member name="T:NUnit.Framework.ValuesAttribute">
             <summary>
@@ -12259,8 +12194,7 @@
         </member>
         <member name="M:NUnit.Framework.Internal.AssemblyHelper.Load(System.String)">
             <summary>
-            Loads an assembly given a string, which may be the
-            path to the assembly or the AssemblyName
+            Loads an assembly given a string, which is the AssemblyName
             </summary>
         </member>
         <member name="M:NUnit.Framework.Internal.AssemblyHelper.GetAssemblyPathFromCodeBase(System.String)">
@@ -13188,20 +13122,6 @@
             Constructs a TheoryResultCommand 
             </summary>
             <param name="command">The command to be wrapped by this one</param>
-        </member>
-        <member name="T:NUnit.Framework.Internal.Commands.TimeoutCommand">
-            <summary>
-            TimeoutCommand creates a timer in order to cancel
-            a test if it exceeds a specified time and adjusts
-            the test result if it did time out.
-            </summary>
-        </member>
-        <member name="M:NUnit.Framework.Internal.Commands.TimeoutCommand.#ctor(NUnit.Framework.Internal.Commands.TestCommand,System.Int32)">
-            <summary>
-            Initializes a new instance of the <see cref="T:NUnit.Framework.Internal.Commands.TimeoutCommand"/> class.
-            </summary>
-            <param name="innerCommand">The inner command</param>
-            <param name="timeout">Timeout value</param>
         </member>
         <member name="T:NUnit.Framework.Internal.ConstraintUtils">
             <summary>
@@ -14272,12 +14192,6 @@
             <param name="resultState">The new ResultState</param>
             <param name="message">The new message</param>
         </member>
-        <member name="M:NUnit.Framework.Internal.Execution.WorkItem.GetTargetApartment(NUnit.Framework.Interfaces.ITest)">
-            <summary>
-            Recursively walks up the test hierarchy to see if the
-            <see cref="T:System.Threading.ApartmentState"/> has been set on any of the parent tests.
-            </summary>
-        </member>
         <member name="T:NUnit.Framework.Internal.Execution.WorkItemBuilder">
             <summary>
             WorkItemBuilder class knows how to build a tree of work items from a tree of tests
@@ -14328,13 +14242,12 @@
             has been satisfied.
             </summary>
         </member>
-        <member name="M:NUnit.Framework.Internal.Execution.WorkItemQueue.#ctor(System.String,System.Boolean,System.Threading.ApartmentState)">
+        <member name="M:NUnit.Framework.Internal.Execution.WorkItemQueue.#ctor(System.String,System.Boolean)">
             <summary>
             Initializes a new instance of the <see cref="T:NUnit.Framework.Internal.Execution.WorkItemQueue"/> class.
             </summary>
             <param name="name">The name of the queue.</param>
             <param name="isParallel">Flag indicating whether this is a parallel queue</param>
-            <param name="apartment">ApartmentState to use for items on this queue</param>
         </member>
         <member name="P:NUnit.Framework.Internal.Execution.WorkItemQueue.Name">
             <summary>
@@ -14344,11 +14257,6 @@
         <member name="P:NUnit.Framework.Internal.Execution.WorkItemQueue.IsParallelQueue">
             <summary>
             Gets a flag indicating whether this queue is used for parallel execution
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.Execution.WorkItemQueue.TargetApartment">
-            <summary>
-            Gets the target ApartmentState for work items on this queue
             </summary>
         </member>
         <member name="P:NUnit.Framework.Internal.Execution.WorkItemQueue.ItemsProcessed">
@@ -15157,35 +15065,6 @@
             Serialization Constructor
             </summary>
         </member>
-        <member name="T:NUnit.Framework.Internal.InvalidPlatformException">
-            <summary>
-            InvalidPlatformException is thrown when the platform name supplied
-            to a test is not recognized.
-            </summary>
-        </member>
-        <member name="M:NUnit.Framework.Internal.InvalidPlatformException.#ctor">
-            <summary>
-            Instantiates a new instance of the <see cref="T:NUnit.Framework.Internal.InvalidPlatformException"/> class.
-            </summary>
-        </member>
-        <member name="M:NUnit.Framework.Internal.InvalidPlatformException.#ctor(System.String)">
-            <summary>
-            Instantiates a new instance of the <see cref="T:NUnit.Framework.Internal.InvalidPlatformException"/> class
-            </summary>
-            <param name="message">The message.</param>
-        </member>
-        <member name="M:NUnit.Framework.Internal.InvalidPlatformException.#ctor(System.String,System.Exception)">
-            <summary>
-            Instantiates a new instance of the <see cref="T:NUnit.Framework.Internal.InvalidPlatformException"/> class
-            </summary>
-            <param name="message">The message.</param>
-            <param name="inner">The inner.</param>
-        </member>
-        <member name="M:NUnit.Framework.Internal.InvalidPlatformException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
-            <summary>
-            Serialization constructor for the <see cref="T:NUnit.Framework.Internal.InvalidPlatformException"/> class
-            </summary>
-        </member>
         <member name="T:NUnit.Framework.Internal.InvalidTestFixtureException">
             <summary>
             InvalidTestFixtureException is thrown when an appropriate test
@@ -15614,277 +15493,6 @@
             Serialization Constructor
             </summary>
         </member>
-        <member name="T:NUnit.Framework.Internal.OSPlatform">
-            <summary>
-            OSPlatform represents a particular operating system platform
-            </summary>
-        </member>
-        <member name="F:NUnit.Framework.Internal.OSPlatform.UnixPlatformID_Microsoft">
-            <summary>
-            Platform ID for Unix as defined by Microsoft .NET 2.0 and greater
-            </summary>
-        </member>
-        <member name="F:NUnit.Framework.Internal.OSPlatform.UnixPlatformID_Mono">
-            <summary>
-            Platform ID for Unix as defined by Mono
-            </summary>
-        </member>
-        <member name="F:NUnit.Framework.Internal.OSPlatform.XBoxPlatformID">
-            <summary>
-            Platform ID for XBox as defined by .NET and Mono
-            </summary>
-        </member>
-        <member name="F:NUnit.Framework.Internal.OSPlatform.MacOSXPlatformID">
-            <summary>
-            Platform ID for MacOSX as defined by .NET and Mono
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.CurrentPlatform">
-            <summary>
-            Get the OSPlatform under which we are currently running
-            </summary>
-        </member>
-        <member name="M:NUnit.Framework.Internal.OSPlatform.GetWindows81PlusVersion(System.Version)">
-            <summary>
-            Gets the actual OS Version, not the incorrect value that might be 
-            returned for Win 8.1 and Win 10
-            </summary>
-            <remarks>
-            If an application is not manifested as Windows 8.1 or Windows 10,
-            the version returned from Environment.OSVersion will not be 6.3 and 10.0
-            respectively, but will be 6.2 and 6.3. The correct value can be found in
-            the registry.
-            </remarks>
-            <param name="version">The original version</param>
-            <returns>The correct OS version</returns>
-        </member>
-        <member name="T:NUnit.Framework.Internal.OSPlatform.ProductType">
-            <summary>
-            Product Type Enumeration used for Windows
-            </summary>
-        </member>
-        <member name="F:NUnit.Framework.Internal.OSPlatform.ProductType.Unknown">
-            <summary>
-            Product type is unknown or unspecified
-            </summary>
-        </member>
-        <member name="F:NUnit.Framework.Internal.OSPlatform.ProductType.WorkStation">
-            <summary>
-            Product type is Workstation
-            </summary>
-        </member>
-        <member name="F:NUnit.Framework.Internal.OSPlatform.ProductType.DomainController">
-            <summary>
-            Product type is Domain Controller
-            </summary>
-        </member>
-        <member name="F:NUnit.Framework.Internal.OSPlatform.ProductType.Server">
-            <summary>
-            Product type is Server
-            </summary>
-        </member>
-        <member name="M:NUnit.Framework.Internal.OSPlatform.#ctor(System.PlatformID,System.Version)">
-            <summary>
-            Construct from a platform ID and version
-            </summary>
-        </member>
-        <member name="M:NUnit.Framework.Internal.OSPlatform.#ctor(System.PlatformID,System.Version,NUnit.Framework.Internal.OSPlatform.ProductType)">
-            <summary>
-            Construct from a platform ID, version and product type
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.Platform">
-            <summary>
-            Get the platform ID of this instance
-            </summary>
-        </member>
-        <member name="M:NUnit.Framework.Internal.OSPlatform.ToString">
-            <summary>
-            Implemented to use in place of Environment.OSVersion.ToString()
-            </summary>
-            <returns>A representation of the platform ID and version in an approximation of the format used by Environment.OSVersion.ToString()</returns>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.Version">
-            <summary>
-            Get the Version of this instance
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.Product">
-            <summary>
-            Get the Product Type of this instance
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.IsWindows">
-            <summary>
-            Return true if this is a windows platform
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.IsUnix">
-            <summary>
-            Return true if this is a Unix or Linux platform
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.IsWin32S">
-            <summary>
-            Return true if the platform is Win32S
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.IsWin32Windows">
-            <summary>
-            Return true if the platform is Win32Windows
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.IsWin32NT">
-            <summary>
-             Return true if the platform is Win32NT
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.IsWinCE">
-            <summary>
-            Return true if the platform is Windows CE
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.IsXbox">
-            <summary>
-            Return true if the platform is Xbox
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.IsMacOSX">
-            <summary>
-            Return true if the platform is MacOSX
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.IsWin95">
-            <summary>
-            Return true if the platform is Windows 95
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.IsWin98">
-            <summary>
-            Return true if the platform is Windows 98
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.IsWinME">
-            <summary>
-            Return true if the platform is Windows ME
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.IsNT3">
-            <summary>
-            Return true if the platform is NT 3
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.IsNT4">
-            <summary>
-            Return true if the platform is NT 4
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.IsNT5">
-            <summary>
-            Return true if the platform is NT 5
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.IsWin2K">
-            <summary>
-            Return true if the platform is Windows 2000
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.IsWinXP">
-            <summary>
-            Return true if the platform is Windows XP
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.IsWin2003Server">
-            <summary>
-            Return true if the platform is Windows 2003 Server
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.IsNT6">
-            <summary>
-            Return true if the platform is NT 6
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.IsNT60">
-            <summary>
-            Return true if the platform is NT 6.0
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.IsNT61">
-            <summary>
-            Return true if the platform is NT 6.1
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.IsNT62">
-            <summary>
-            Return true if the platform is NT 6.2
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.IsNT63">
-            <summary>
-            Return true if the platform is NT 6.3
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.IsVista">
-            <summary>
-            Return true if the platform is Vista
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.IsWin2008Server">
-            <summary>
-            Return true if the platform is Windows 2008 Server (original or R2)
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.IsWin2008ServerR1">
-            <summary>
-            Return true if the platform is Windows 2008 Server (original)
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.IsWin2008ServerR2">
-            <summary>
-            Return true if the platform is Windows 2008 Server R2
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.IsWin2012Server">
-            <summary>
-            Return true if the platform is Windows 2012 Server (original or R2)
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.IsWin2012ServerR1">
-            <summary>
-            Return true if the platform is Windows 2012 Server (original)
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.IsWin2012ServerR2">
-            <summary>
-            Return true if the platform is Windows 2012 Server R2
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.IsWindows7">
-            <summary>
-            Return true if the platform is Windows 7
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.IsWindows8">
-            <summary>
-            Return true if the platform is Windows 8
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.IsWindows81">
-            <summary>
-            Return true if the platform is Windows 8.1
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.IsWindows10">
-            <summary>
-            Return true if the platform is Windows 10
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.OSPlatform.IsWindowsServer10">
-            <summary>
-            Return true if the platform is Windows Server. This is named Windows
-            Server 10 to distinguish it from previous versions of Windows Server.
-            </summary>
-        </member>
         <member name="T:NUnit.Framework.Internal.ParamAttributeTypeConversions">
             <summary>
             Helper methods for converting parameters to numeric values to supported types
@@ -15936,74 +15544,6 @@
         <member name="M:NUnit.Framework.Internal.ParameterWrapper.IsDefined``1(System.Boolean)">
             <summary>
             Gets a value indicating whether one or more attributes of the specified type are defined on the parameter.
-            </summary>
-        </member>
-        <member name="T:NUnit.Framework.Internal.PlatformHelper">
-            <summary>
-            PlatformHelper class is used by the PlatformAttribute class to
-            determine whether a platform is supported.
-            </summary>
-        </member>
-        <member name="F:NUnit.Framework.Internal.PlatformHelper.OSPlatforms">
-            <summary>
-            Comma-delimited list of all supported OS platform constants
-            </summary>
-        </member>
-        <member name="F:NUnit.Framework.Internal.PlatformHelper.RuntimePlatforms">
-            <summary>
-            Comma-delimited list of all supported Runtime platform constants
-            </summary>
-        </member>
-        <member name="M:NUnit.Framework.Internal.PlatformHelper.#ctor">
-            <summary>
-            Default constructor uses the operating system and
-            common language runtime of the system.
-            </summary>
-        </member>
-        <member name="M:NUnit.Framework.Internal.PlatformHelper.#ctor(NUnit.Framework.Internal.OSPlatform,NUnit.Framework.Internal.RuntimeFramework)">
-            <summary>
-            Construct a PlatformHelper for a particular operating
-            system and common language runtime. Used in testing.
-            </summary>
-            <param name="rt">RuntimeFramework to be used</param>
-            <param name="os">OperatingSystem to be used</param>
-        </member>
-        <member name="M:NUnit.Framework.Internal.PlatformHelper.IsPlatformSupported(System.String[])">
-            <summary>
-            Test to determine if one of a collection of platforms
-            is being used currently.
-            </summary>
-            <param name="platforms"></param>
-            <returns></returns>
-        </member>
-        <member name="M:NUnit.Framework.Internal.PlatformHelper.IsPlatformSupported(NUnit.Framework.PlatformAttribute)">
-            <summary>
-            Tests to determine if the current platform is supported
-            based on a platform attribute.
-            </summary>
-            <param name="platformAttribute">The attribute to examine</param>
-            <returns></returns>
-        </member>
-        <member name="M:NUnit.Framework.Internal.PlatformHelper.IsPlatformSupported(NUnit.Framework.TestCaseAttribute)">
-            <summary>
-            Tests to determine if the current platform is supported
-            based on a platform attribute.
-            </summary>
-            <param name="testCaseAttribute">The attribute to examine</param>
-            <returns></returns>
-        </member>
-        <member name="M:NUnit.Framework.Internal.PlatformHelper.IsPlatformSupported(System.String)">
-            <summary>
-            Test to determine if a particular platform or comma-delimited set of platforms is in use.
-            </summary>
-            <param name="platform">Name of the platform or comma-separated list of platform ids</param>
-            <returns>True if the platform is in use on the system</returns>
-        </member>
-        <member name="P:NUnit.Framework.Internal.PlatformHelper.Reason">
-            <summary>
-            Return the last failure reason. Results are not
-            defined if called before IsSupported( Attribute )
-            is called.
             </summary>
         </member>
         <member name="T:NUnit.Framework.Internal.PropertyBag">
@@ -16933,109 +16473,6 @@
             ResultState to Failure if the child result failed.
             </summary>
             <param name="result">The result to be added</param>
-        </member>
-        <member name="T:NUnit.Framework.Internal.RuntimeType">
-            <summary>
-            Enumeration identifying a common language
-            runtime implementation.
-            </summary>
-        </member>
-        <member name="F:NUnit.Framework.Internal.RuntimeType.Any">
-            <summary>Any supported runtime framework</summary>
-        </member>
-        <member name="F:NUnit.Framework.Internal.RuntimeType.Net">
-            <summary>Microsoft .NET Framework</summary>
-        </member>
-        <member name="F:NUnit.Framework.Internal.RuntimeType.SSCLI">
-            <summary>Microsoft Shared Source CLI</summary>
-        </member>
-        <member name="F:NUnit.Framework.Internal.RuntimeType.Mono">
-            <summary>Mono</summary>
-        </member>
-        <member name="F:NUnit.Framework.Internal.RuntimeType.MonoTouch">
-            <summary>MonoTouch</summary>
-        </member>
-        <member name="T:NUnit.Framework.Internal.RuntimeFramework">
-            <summary>
-            RuntimeFramework represents a particular version
-            of a common language runtime implementation.
-            </summary>
-        </member>
-        <member name="F:NUnit.Framework.Internal.RuntimeFramework.DefaultVersion">
-            <summary>
-            DefaultVersion is an empty Version, used to indicate that
-            NUnit should select the CLR version to use for the test.
-            </summary>
-        </member>
-        <member name="M:NUnit.Framework.Internal.RuntimeFramework.#ctor(NUnit.Framework.Internal.RuntimeType,System.Version)">
-            <summary>
-            Construct from a runtime type and version. If the version has
-            two parts, it is taken as a framework version. If it has three
-            or more, it is taken as a CLR version. In either case, the other
-            version is deduced based on the runtime type and provided version.
-            </summary>
-            <param name="runtime">The runtime type of the framework</param>
-            <param name="version">The version of the framework</param>
-        </member>
-        <member name="P:NUnit.Framework.Internal.RuntimeFramework.CurrentFramework">
-            <summary>
-            Static method to return a RuntimeFramework object
-            for the framework that is currently in use.
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.RuntimeFramework.Runtime">
-            <summary>
-            The type of this runtime framework
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.RuntimeFramework.FrameworkVersion">
-            <summary>
-            The framework version for this runtime framework
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.RuntimeFramework.ClrVersion">
-            <summary>
-            The CLR version for this runtime framework
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.RuntimeFramework.AllowAnyVersion">
-            <summary>
-            Return true if any CLR version may be used in
-            matching this RuntimeFramework object.
-            </summary>
-        </member>
-        <member name="P:NUnit.Framework.Internal.RuntimeFramework.DisplayName">
-            <summary>
-            Returns the Display name for this framework
-            </summary>
-        </member>
-        <member name="M:NUnit.Framework.Internal.RuntimeFramework.Parse(System.String)">
-            <summary>
-            Parses a string representing a RuntimeFramework.
-            The string may be just a RuntimeType name or just
-            a Version or a hyphenated RuntimeType-Version or
-            a Version prefixed by 'versionString'.
-            </summary>
-            <param name="s"></param>
-            <returns></returns>
-        </member>
-        <member name="M:NUnit.Framework.Internal.RuntimeFramework.ToString">
-            <summary>
-            Overridden to return the short name of the framework
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:NUnit.Framework.Internal.RuntimeFramework.Supports(NUnit.Framework.Internal.RuntimeFramework)">
-            <summary>
-            Returns true if the current framework matches the
-            one supplied as an argument. Two frameworks match
-            if their runtime types are the same or either one
-            is RuntimeType.Any and all specified version components
-            are equal. Negative (i.e. unspecified) version
-            components are ignored.
-            </summary>
-            <param name="target">The RuntimeFramework to be matched.</param>
-            <returns>True on match, otherwise false</returns>
         </member>
         <member name="T:NUnit.Framework.Internal.StackFilter">
             <summary>
@@ -18300,55 +17737,6 @@
             <summary>
             ThreadUtility provides a set of static methods convenient
             for working with threads.
-            </summary>
-        </member>
-        <member name="M:NUnit.Framework.Internal.ThreadUtility.Delay(System.Int32,System.Threading.WaitCallback,System.Object)">
-            <summary>
-            Pre-Task compatibility
-            </summary>
-        </member>
-        <member name="M:NUnit.Framework.Internal.ThreadUtility.Abort(System.Threading.Thread,System.Int32)">
-            <summary>
-            Abort a thread, helping to dislodging it if it is blocked in native code
-            </summary>
-            <param name="thread">The thread to abort</param>
-            <param name="nativeId">The native thread id (if known), otherwise 0.
-            If provided, allows the thread to be killed if it's in a message pump native blocking wait.
-            This must have previously been captured by calling <see cref="M:NUnit.Framework.Internal.ThreadUtility.GetCurrentThreadNativeId"/> from the running thread itself.</param>
-        </member>
-        <member name="M:NUnit.Framework.Internal.ThreadUtility.Kill(System.Threading.Thread,System.Int32)">
-            <summary>
-            Do our best to kill a thread
-            </summary>
-            <param name="thread">The thread to kill</param>
-            <param name="nativeId">The native thread id (if known), otherwise 0.
-            If provided, allows the thread to be killed if it's in a message pump native blocking wait.
-            This must have previously been captured by calling <see cref="M:NUnit.Framework.Internal.ThreadUtility.GetCurrentThreadNativeId"/> from the running thread itself.</param>
-        </member>
-        <member name="M:NUnit.Framework.Internal.ThreadUtility.Kill(System.Threading.Thread,System.Object,System.Int32)">
-            <summary>
-            Do our best to kill a thread, passing state info
-            </summary>
-            <param name="thread">The thread to kill</param>
-            <param name="stateInfo">Info for the ThreadAbortException handler</param>
-            <param name="nativeId">The native thread id (if known), otherwise 0.
-            If provided, allows the thread to be killed if it's in a message pump native blocking wait.
-            This must have previously been captured by calling <see cref="M:NUnit.Framework.Internal.ThreadUtility.GetCurrentThreadNativeId"/> from the running thread itself.</param>
-        </member>
-        <member name="M:NUnit.Framework.Internal.ThreadUtility.DislodgeThreadInNativeMessageWait(System.Threading.Thread,System.Int32)">
-            <summary>
-            Schedule a threadpool thread to check on the aborting thread in case it's in a message pump native blocking wait
-            </summary>
-        </member>
-        <member name="M:NUnit.Framework.Internal.ThreadUtility.GetCurrentThreadNativeId">
-            <summary>
-            Captures the current thread's native id. If provided to <see cref="M:NUnit.Framework.Internal.ThreadUtility.Kill(System.Threading.Thread,System.Int32)"/> later, allows the thread to be killed if it's in a message pump native blocking wait.
-            </summary>
-        </member>
-        <member name="M:NUnit.Framework.Internal.ThreadUtility.PostThreadCloseMessage(System.Int32)">
-            <summary>
-            Sends a message to the thread to dislodge it from native code and allow a return to managed code, where a ThreadAbortException can be generated.
-            The message is meaningless (WM_CLOSE without a window handle) but it will end any blocking message wait.
             </summary>
         </member>
         <member name="T:NUnit.Framework.Internal.TypeHelper">
@@ -20202,6 +19590,24 @@
             This class is used as a flag when we get a parameter list for a method/constructor, but
             we do not know one of the types because null was passed in.
             </summary>
+        </member>
+        <member name="T:System.Web.UI.ICallbackEventHandler">
+            <summary>
+            A shim of the .NET interface for platforms that do not support it.
+            Used to indicate that a control can be the target of a callback event on the server.
+            </summary>
+        </member>
+        <member name="M:System.Web.UI.ICallbackEventHandler.RaiseCallbackEvent(System.String)">
+            <summary>
+            Processes a callback event that targets a control.
+            </summary>
+            <param name="report"></param>
+        </member>
+        <member name="M:System.Web.UI.ICallbackEventHandler.GetCallbackResult">
+            <summary>
+            Returns the results of a callback event that targets a control.
+            </summary>
+            <returns></returns>
         </member>
     </members>
 </doc>

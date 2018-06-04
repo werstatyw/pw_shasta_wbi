@@ -2,8 +2,10 @@
 using System;
 using System.IO;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
+using pw_shasta_wbi.Framework.Core;
             
 namespace pw_shasta_wbi
 {
@@ -16,9 +18,11 @@ namespace pw_shasta_wbi
         [SetUp]
         public void SetUp()
 		{
-			baseURL = "https://shasta.postalweb.net/Account/LogOn";
+			baseURL = Configuration.Get("BaseURL");
 			ChromeOptions options = new ChromeOptions();
-			driver = new ChromeDriver(Path.GetFullPath("/home/wers4/Projects/pw_shasta_wbi/pw_shasta_wbi"), options);
+			DesiredCapabilities capabilities = new DesiredCapabilities();
+			Driver.Add(Configuration.Get("Browser"),Path.GetFullPath("/home/wers4/Projects/pw_shasta_wbi/pw_shasta_wbi"), capabilities);
+			driver = Driver.Current();
             driver.Navigate().GoToUrl(baseURL);
 		}
         [TearDown]
