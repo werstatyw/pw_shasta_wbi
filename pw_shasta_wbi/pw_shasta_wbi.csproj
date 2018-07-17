@@ -46,6 +46,7 @@
     <Compile Include="Framework\UI\Controls\Control.cs" />
     <Compile Include="Framework\UI\Controls\Edit.cs" />
     <Compile Include="Framework\UI\Controls\SelectList.cs" />
+    <Compile Include="Framework\UI\Page.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

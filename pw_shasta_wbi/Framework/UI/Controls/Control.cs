@@ -9,7 +9,12 @@ namespace pw_shasta_wbi.Framework.UI.Controls
     public class Control
     {
 		private IWebDriver driver;
+		private Page page;
 		private By locator;
+		public Page Page
+		{
+			return page;
+		}
 
         public IWebDriver Driver
 		{

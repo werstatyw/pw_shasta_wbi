@@ -41,24 +41,28 @@ namespace pw_shasta_wbi
         public void TestCase(String username, String password)
         {
 			Edit editUsername = new Edit(driver, By.Id("UserName"));
-			Control autoCompleteItem = new Control(driver, By.XPath("(//li(contains(@class, 'autocomplete_item')])"));
-			Control checkoutDayToday = new Control(driver, By.CssSelector("i.sb-date-field_chevron.bicon-downchevron"));
-			Control radioLeisure = new Control(driver, By.XPath("(//input(@name='sb_travel_purpose'])[2]"));
-			Control radioBusiness = new Control(driver, By.XPath("(//input(@name='sb_travel_purpose'])[1]"));
-			SelectList selectAdultsNumber =  new SelectList(driver, By.Id("group_adults"));
-			Control buttonSubmit = new Control(driver, By.LinkText("Logout"));
-
+			Edit editPassword = new Edit(driver, By.Id("Password"));
+		//	Control autoCompleteItem = new Control(driver, By.XPath("(//li(contains(@class, 'autocomplete_item')])"));
+		//	Control checkoutDayToday = new Control(driver, By.CssSelector("i.sb-date-field_chevron.bicon-downchevron"));
+		//	Control radioLeisure = new Control(driver, By.XPath("(//input(@name='sb_travel_purpose'])[2]"));
+		//	Control radioBusiness = new Control(driver, By.XPath("(//input(@name='sb_travel_purpose'])[1]"));
+		//	SelectList selectAdultsNumber =  new SelectList(driver, By.Id("group_adults"));
+			Control buttonLogin = new Control(driver, By.Id("btnLogin"));
+			Control buttonLogout = new Control(driver, By.LinkText("Logout"));
 			editUsername.Text = username;
-			autoCompleteItem.Click();
+			editPassword.Text = password;
+			buttonLogin.Click();
+			buttonLogout.Click();
+			//autoCompleteItem.Click();
 
-			driver.FindElement(By.Id("UserName")).Clear();
+		/*	driver.FindElement(By.Id("UserName")).Clear();
             driver.FindElement(By.Id("UserName")).SendKeys(username);
             driver.FindElement(By.Id("Password")).Click();
             driver.FindElement(By.Id("Password")).Clear();
             driver.FindElement(By.Id("Password")).SendKeys(password);
             driver.FindElement(By.Id("btnLogin")).Click();
 //			System.Threading.Thread.Sleep(1000);
-            driver.FindElement(By.LinkText("Logout")).Click();
+            driver.FindElement(By.Id("Logout")).Click();*/
         }
     }
              
