@@ -21,7 +21,7 @@ namespace pw_shasta_wbi.Framework.UI.Controls
 				this.Element.SendKeys(value);
 			}
 		}
-		public Edit(IWebDriver driver, By locator) : base(driver, locator)
+		public Edit(Page pageValue, By locator) : base(pageValue, locator)
         {
         }
     }

@@ -13,3 +13,8 @@
 /home/wers4/Projects/pw_shasta_wbi/pw_shasta_wbi/obj/Debug/pw_shasta_wbi.pdb
 /home/wers4/Projects/pw_shasta_wbi/pw_shasta_wbi/bin/Debug/pw_shasta_wbi.dll.config
 /home/wers4/Projects/pw_shasta_wbi/pw_shasta_wbi/bin/Debug/nunit.framework.pdb
+/home/wers4/Projects/pw_shasta_wbi/pw_shasta_wbi/bin/Debug/appium-dotnet-driver.dll
+/home/wers4/Projects/pw_shasta_wbi/pw_shasta_wbi/bin/Debug/Castle.Core.dll
+/home/wers4/Projects/pw_shasta_wbi/pw_shasta_wbi/bin/Debug/Newtonsoft.Json.dll
+/home/wers4/Projects/pw_shasta_wbi/pw_shasta_wbi/bin/Debug/Castle.Core.xml
+/home/wers4/Projects/pw_shasta_wbi/pw_shasta_wbi/bin/Debug/Newtonsoft.Json.xml

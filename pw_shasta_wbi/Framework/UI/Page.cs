@@ -30,5 +30,15 @@ namespace pw_shasta_wbi.Framework.UI
 			Control element = new Control(this, By.XPath(locatorText));
 			return element.Exists();
 		}
+        public byte[] CaptureScreenShot()
+		{
+			Screenshot screen = ((ITakesScreenshot)Driver).GetScreenshot();
+			return screen.AsByteArray;
+		}
+		public void CaptureScreenShot(String path)
+        {
+            Screenshot screen = ((ITakesScreenshot)Driver).GetScreenshot();
+			screen.SaveAsFile(path, ScreenshotImageFormat.Png);
+        }
 	}
 }

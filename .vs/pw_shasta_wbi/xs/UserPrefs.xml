@@ -1,13 +1,19 @@
 ﻿<Properties StartupConfiguration="{19DBF0FC-04A1-4D21-8328-129363AEDD30}|Unit Tests">
-  <MonoDevelop.Ide.Workbench ActiveDocument="pw_shasta_wbi/Framework/UI/Page.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="pw_shasta_wbi/Test.cs" Line="69" Column="5" />
-      <File FileName="pw_shasta_wbi/Framework/Core/Driver.cs" Line="52" Column="5" />
-      <File FileName="pw_shasta_wbi/Framework/UI/Controls/Control.cs" Line="24" Column="5" />
-      <File FileName="pw_shasta_wbi/Framework/UI/Controls/Edit.cs" Line="1" Column="1" />
-      <File FileName="pw_shasta_wbi/Framework/UI/Controls/SelectList.cs" Line="7" Column="2" />
+      <File FileName="pw_shasta_wbi/Test.cs" Line="59" Column="35" />
+      <File FileName="pw_shasta_wbi/Framework/Core/Driver.cs" Line="1" Column="1" />
+      <File FileName="pw_shasta_wbi/Framework/UI/Controls/Control.cs" Line="89" Column="3" />
+      <File FileName="pw_shasta_wbi/Framework/UI/Controls/Edit.cs" Line="11" Column="25" />
+      <File FileName="pw_shasta_wbi/Framework/UI/Controls/SelectList.cs" Line="20" Column="5" />
       <File FileName="pw_shasta_wbi/app.config" Line="1" Column="1" />
-      <File FileName="pw_shasta_wbi/Framework/UI/Page.cs" Line="10" Column="3" />
+      <File FileName="pw_shasta_wbi/Framework/UI/Page.cs" Line="40" Column="34" />
+      <File FileName="pw_shasta_wbi/Pages/SearchPage.cs" Line="14" Column="28" />
+      <File FileName="pw_shasta_wbi/Pages/SearchResultsPage.cs" Line="5" Column="1" />
+      <File FileName="pw_shasta_wbi/Framework/UI/FindBy.cs" Line="1" Column="1" />
+      <File FileName="pw_shasta_wbi/Framework/UI/PageFactory.cs" Line="1" Column="1" />
+      <File FileName="pw_shasta_wbi/Framework/UI/TargetPlatform.cs" Line="1" Column="1" />
+      <File FileName="pw_shasta_wbi/Framework/Core/Configuration.cs" Line="29" Column="49" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

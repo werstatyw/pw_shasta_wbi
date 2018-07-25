@@ -25,7 +25,7 @@ namespace pw_shasta_wbi.Framework.UI.Controls
 				this.Select.SelectByText(value);
 			}
 		}
-		public SelectList(IWebDriver driver, By locator) : base(driver, locator)
+		public SelectList(Page pageValue, By locator) : base(pageValue, locator)
         {
         }
     }

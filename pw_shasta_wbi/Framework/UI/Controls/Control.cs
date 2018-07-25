@@ -8,19 +8,22 @@ namespace pw_shasta_wbi.Framework.UI.Controls
 {
     public class Control
     {
-		private IWebDriver driver;
 		private Page page;
 		private By locator;
+
 		public Page Page
 		{
-			return page;
+			get
+			{
+				return page;
+			}
 		}
 
         public IWebDriver Driver
 		{
 			get
 			{
-				return driver;
+				return Page.Driver;
 			}
 		}
         public By Locator
@@ -45,16 +48,16 @@ namespace pw_shasta_wbi.Framework.UI.Controls
 				return this.Element.Text;
 			}
 		}
-        public Control(IWebDriver driverValue, By locatorValue)
+        public Control(Page pageValue, By locatorValue)
         {
-			driver = driverValue;
-			locator = locatorValue;
+			this.page = pageValue;
+			this.locator = locatorValue;
         }
         public bool Exists(int timeout)
 		{
 			try
 			{
-				new WebDriverWait(driver, TimeSpan.FromSeconds(timeout)).Until(ExpectedConditions.ElementExists(this.Locator));
+				new WebDriverWait(Driver, TimeSpan.FromSeconds(timeout)).Until(ExpectedConditions.ElementExists(this.Locator));
 			}
 			catch (WebDriverTimeoutException)
 			{
@@ -70,7 +73,7 @@ namespace pw_shasta_wbi.Framework.UI.Controls
         {
             try
             {
-                new WebDriverWait(driver, TimeSpan.FromSeconds(timeout))
+                new WebDriverWait(Driver, TimeSpan.FromSeconds(timeout))
 					.Until(ExpectedConditions.ElementExists(this.Locator));
             }
             catch (WebDriverTimeoutException)
