@@ -39,7 +39,7 @@ namespace pw_shasta_wbi
 		{
 		//	new Object [] {"", "test"},
 		//	new Object [] {"test", ""},
-			new Object [] {"werstatyw", "xAcdxehs1348!"},
+			new Object [] {"werstatyw", "pwd!"},
 		};
         [Test(), TestCaseSource("LoginData")]
         public void TestCase(String username, String password)
